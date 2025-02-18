@@ -1,33 +1,13 @@
-@props(['vinyle'])
-
 <x-layout>
     <x-slot:heading>
         {{$vinyle['title']}}
     </x-slot:heading>
-<!--
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    theme: {
-      extend: {
-        gridTemplateRows: {
-          '[auto,auto,1fr]': 'auto auto 1fr',
-        },
-      },
-    },
-  }
-  ```
--->
+
 <div class="bg-white">
     <div class="pt-6">
   
-      <!-- Image gallery -->
 
-  
-      <!-- Product info -->
+      <!-- Vinyle info -->
       <div class="mx-auto max-w-2xl px-4 pt-10 pb-16 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:grid-rows-[auto_auto_1fr] lg:gap-x-8 lg:px-8 lg:pt-16 lg:pb-24">
         <div class="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
           <h1 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">{{$vinyle['title']}}</h1>

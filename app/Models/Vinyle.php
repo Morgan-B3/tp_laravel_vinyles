@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Arr;
 
 class Vinyle extends Model
 {
@@ -102,6 +103,12 @@ class Vinyle extends Model
     }
 
     public static function find(int $id){
-        return self::getAllVinyles()[$id - 1];
+        $vinyle = Arr::first(self::getAllVinyles(), fn($vinyle) => $vinyle['id'] == $id);
+
+        if (!$vinyle) {
+            abort(404);
+        }
+
+        return $vinyle;
     }
 }
