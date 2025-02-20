@@ -10,9 +10,9 @@
 
     <div class="bg-white">
 
-        <div class="flex">
+        <div class="flex flex-wrap gap-y-2">
             @foreach ($genres as $genre)
-                <a href="/genre={{$genre->id}}" class="text-gray-700 hover:text-gray-900 hover:underline">{{$genre->name}}</a>
+                <x-genre :genre="$genre"></x-genre>
             @endforeach
         </div>
 

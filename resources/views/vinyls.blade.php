@@ -1,10 +1,10 @@
-<x-layout>
+<x-layout :show='false'>
     <x-slot:heading>
         {{$vinyl['title']}}
     </x-slot:heading>
 
 <div class="bg-white">
-    <div class="pt-6">
+    <div class="">
 
 
       <!-- Vinyl info -->
@@ -16,7 +16,10 @@
         <!-- Options -->
         <div class="mt-4 ">
           <h2 class="sr-only">Vinyl information</h2>
-          <p class="text-3xl tracking-tight text-gray-900">{{$vinyl->artist->name}} - {{$vinyl["release_year"]}}</p>
+            <div class="flex">
+                <a class="text-3xl tracking-tight text-gray-900" href="/artist={{$vinyl->artist->id}}">{{$vinyl->artist->name}}</a>
+                <p class="text-3xl tracking-tight text-gray-900"> - {{$vinyl["release_year"]}}</p>
+            </div>
 
         </div>
 
@@ -42,11 +45,11 @@
         </div>
         <div class="mt-10">
             <h2 class="text-sm font-medium text-gray-900">Genre(s)</h2>
-            <div class="mt-4 space-y-6">
-                @foreach ($vinyl->genres as $genre)
-                    <p class="text-sm text-gray-600">{{$genre->name}}</p>
-                @endforeach
-            </div>
+                   <div class="flex flex-wrap gap-y-2">
+            @foreach ($vinyl->genres as $genre)
+                <x-genre :genre="$genre"></x-genre>
+            @endforeach
+        </div>
         </div>
         </div>
 

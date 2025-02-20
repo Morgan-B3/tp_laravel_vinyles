@@ -24,6 +24,17 @@ Route::get('/genre={id}', function ($id) {
     ]);
 });
 
+Route::get('/artist={id}', function ($id) {
+    $vinyls = Vinyl::where('artist_id', $id)->with('artist')->paginate(10);
+    $genres = Genre::all();
+    $selectedArtist = Vinyl::findOrFail($id)->artist;
+    return view('home', [
+        'vinyls' => $vinyls,
+        'genres' => $genres,
+        'selectedArtist' => $selectedArtist
+    ]);
+});
+
 
 Route::get('/vinyls/{id}', function ($id) {
     $vinyl =  Vinyl::findOrFail($id);

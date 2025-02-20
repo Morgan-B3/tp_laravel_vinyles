@@ -1,3 +1,5 @@
+@props(['heading', 'show' => true])
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -14,7 +16,7 @@
                     <div class="flex h-16 items-center justify-between">
                         <div class="flex items-center">
                             <div class="shrink-0">
-                                <a href="/" class="text-gray-300 hover:bg-gray-700 hover:text-white"><img class="w-50" src="/images/logo.png" alt="Logo La Spinothèque">
+                                <a href="/" class="text-gray-300 hover:bg-gray-700 hover:text-white"><img class="w-50" src="/images/logo.png" alt="La Spinothèque">
                                 </a>
                             </div>
                         </div>
@@ -23,9 +25,11 @@
             </nav>
 
             <header class="bg-white shadow-sm">
-                <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                    <h1 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">{{$heading}}</h1>
-                </div>
+                @if($show === true)
+                    <div class="mx-auto max-w-7xl py-2 sm:px-6 lg:px-8">
+                        <h1 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">{{$heading}}</h1>
+                    </div>
+                @endif
             </header>
             <main>
                 <div class="bg-background mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
