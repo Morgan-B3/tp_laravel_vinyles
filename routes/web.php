@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Artist;
 use App\Models\Genre;
 use App\Models\Vinyl;
 use Illuminate\Support\Facades\Route;
@@ -20,18 +21,18 @@ Route::get('/genre={id}', function ($id) {
     return view('home', [
         'vinyls' => $vinyls,
         'genres' => $genres,
-        'selectedGenre' => $selectedGenre
+        'selectedFilter' => $selectedGenre
     ]);
 });
 
 Route::get('/artist={id}', function ($id) {
     $vinyls = Vinyl::where('artist_id', $id)->with('artist')->paginate(10);
     $genres = Genre::all();
-    $selectedArtist = Vinyl::findOrFail($id)->artist;
+    $selectedArtist = Artist::findOrFail($id);
     return view('home', [
         'vinyls' => $vinyls,
         'genres' => $genres,
-        'selectedArtist' => $selectedArtist
+        'selectedFilter' => $selectedArtist
     ]);
 });
 

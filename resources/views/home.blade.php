@@ -1,8 +1,8 @@
 <x-layout>
 
     <x-slot:heading>
-        @isset($selectedGenre)
-            {{$selectedGenre->name}}
+        @isset($selectedFilter)
+            {{$selectedFilter->name}}
         @else
             Accueil
         @endisset

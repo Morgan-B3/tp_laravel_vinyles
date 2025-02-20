@@ -17,7 +17,7 @@
         <div class="mt-4 ">
           <h2 class="sr-only">Vinyl information</h2>
             <div class="flex">
-                <a class="text-3xl tracking-tight text-gray-900" href="/artist={{$vinyl->artist->id}}">{{$vinyl->artist->name}}</a>
+                <a class="text-3xl tracking-tight text-teal-800 hover:underline hover:text-teal-600" href="/artist={{$vinyl->artist->id}}">{{$vinyl->artist->name}}</a>
                 <p class="text-3xl tracking-tight text-gray-900"> - {{$vinyl["release_year"]}}</p>
             </div>
 
