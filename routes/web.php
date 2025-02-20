@@ -1,14 +1,14 @@
 <?php
 
-use App\Models\Vinyle;
+use App\Models\Vinyl;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    $vinyles = Vinyle::getAllVinyles();
-    return view('home', ['vinyles' => $vinyles]);
+    $vinyls = Vinyl::all();
+    return view('home', ['vinyls' => $vinyls]);
 });
 
-Route::get('/vinyles/{id}', function ($id) {
-    $vinyle =  Vinyle::find($id);
-    return view('vinyles', ['vinyle' => $vinyle]);
+Route::get('/vinyls/{id}', function ($id) {
+    $vinyl =  Vinyl::findOrFail($id);
+    return view('vinyls', ['vinyl' => $vinyl]);
 });
