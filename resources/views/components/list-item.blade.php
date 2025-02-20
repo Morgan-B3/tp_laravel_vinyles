@@ -2,7 +2,7 @@
 
 
 <div class="group relative">
-    <img src="{{$vinyl['cover']}}" alt="" class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto ">
+    <img src="{{$vinyl['cover']}}" alt="{{$vinyl->title}}" class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto ">
     <div class="mt-4 flex justify-between">
         <div>
         <h3 class="text-sm text-gray-700">

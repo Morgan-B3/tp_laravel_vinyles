@@ -20,7 +20,7 @@ class VinylFactory extends Factory
             'title' => $this->faker->sentence(3),
             'release_year' => $this->faker->year,
             'label' => $this->faker->company,
-            'cover' => $this->faker->imageUrl($width=400, $height=400),
+            'cover' => "https://picsum.photos/id/".random_int(1,500)."/500/500",
             'description' => $this->faker->text,
             'artist_id' => $this->faker->numberBetween(1, 10)
         ];
